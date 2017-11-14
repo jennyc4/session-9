@@ -30,6 +30,12 @@ var app = new Vue({
       var answer = this.$refs.textInput.value;
       var correction = this.step.answer;
 
+      if (answer === correction) {
+        this.success = true;
+      } else {
+        this.success = false;
+      }
+
       // ******* Ecris ici la condition nécessaire
     },
     nextQuestion: function nextQuestion () {
