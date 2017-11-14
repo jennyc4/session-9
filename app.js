@@ -34,8 +34,12 @@ var app = new Vue({
     },
     nextQuestion: function nextQuestion () {
       // Incrémente le score, réinitialise la propriété succès, passe à la question suivante
+      if (this.success === true) {
+        this.score++;
+      }
+      this.success = null;
+      this.current++      
 
-      // ******* Ecris ici les actions et la condition nécessaires
     },
     buttonClasses: function buttonClasses (value) {
       // Renvoie les classes pour colorer les bouttons QCM en fonction de la réponse
